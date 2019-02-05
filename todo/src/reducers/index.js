@@ -1,5 +1,4 @@
 import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from '../actions/actions';
-import { AST_PropAccess } from 'terser';
 
 const initialState = {
     todos: []
@@ -26,14 +25,13 @@ function reducer(state = initialState, action) {
             }
 
         case REMOVE_TODO:
-            console.log(action)
             return {
                 ...state,
                 todos: state.todos.filter((todo) => {
-                    return todo.completed === false
+                    return todo.completed === false;
                 })
             }    
-        
+            
         default:
             return state
     }

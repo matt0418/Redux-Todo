@@ -27,19 +27,27 @@ class Todo extends React.Component {
         this.props.removeTodo(index)
     }
 
+    removeOneTodo = (e, index) => {
+        e.preventDefault();
+        this.props.removeOneTodo(index)
+    }
+
     render() {
         return(
             <div>
                 <h1>Todo List</h1>
                 <div>
                     {this.props.todos.map((todo, index) => (
-                        <h4
-                        className = {todo.completed ? 'completed' : ''}
-                        onClick = {e => this.toggleTodo(e, index)}
-                        key={index}
-                        >
-                            {todo.value}
-                        </h4>
+                        <div>
+                            <h4
+                            className = {todo.completed ? 'completed' : ''}
+                            onClick = {e => this.toggleTodo(e, index)}
+                            key={index}
+                            >
+                                {todo.value}
+                            </h4>
+                        </div>
+                        
                     ))}
                 </div>
                 <form onSubmit={this.addTodo}>
