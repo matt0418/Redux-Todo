@@ -27,11 +27,6 @@ class Todo extends React.Component {
         this.props.removeTodo(index)
     }
 
-    removeOneTodo = (e, index) => {
-        e.preventDefault();
-        this.props.removeOneTodo(index)
-    }
-
     render() {
         return(
             <div>

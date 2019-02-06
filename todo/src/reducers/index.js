@@ -27,7 +27,7 @@ function reducer(state = initialState, action) {
         case REMOVE_TODO:
             return {
                 ...state,
-                todos: state.todos.filter((todo) => {
+                todos: state.todos.filter(todo => {
                     return todo.completed === false;
                 })
             }    
